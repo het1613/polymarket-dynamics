@@ -8,3 +8,4 @@ seaborn
 statsmodels
 powerlaw
 tqdm
+jinja2
