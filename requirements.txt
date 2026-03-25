@@ -9,3 +9,4 @@ statsmodels
 powerlaw
 tqdm
 jinja2
+jupyter
