@@ -47,8 +47,8 @@ def build_features(market: dict) -> pd.DataFrame | None:
     """
     slug = market["slug"]
     end_date_str = market["end_date"]
-    role = market["role"]
-    category = market["category"]
+    role = market.get("role", "")
+    category = market.get("category", "")
     triad_id = market.get("triad_id", "")
 
     price_path = DATA_PROCESSED / f"prices_{slug}_hourly.parquet"
