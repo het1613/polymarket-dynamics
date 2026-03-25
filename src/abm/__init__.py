@@ -7,5 +7,17 @@ Stages:
   3 — (Optional) Shock-type separation for reversal asymmetry
 """
 
-from src.abm.model import ABMParams, simulate_market, sim_to_features, simulate_panel  # noqa: F401
-from src.abm.calibration import compute_targets, compute_distance, random_search  # noqa: F401
+from src.abm.model import (  # noqa: F401
+    ABMParams,
+    panel_template_from_reference,
+    sim_to_features,
+    simulate_market,
+    simulate_panel,
+)
+from src.abm.calibration import (  # noqa: F401
+    compute_distance,
+    compute_quantile_regression_targets,
+    compute_targets,
+    evaluate_params,
+    random_search,
+)
