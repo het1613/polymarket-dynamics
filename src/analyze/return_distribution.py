@@ -176,7 +176,7 @@ def plot_tail_ccdf(
     Log-log complementary CDF of |r| for each market on a single axes,
     useful for visual power-law comparison.
     """
-    fig, ax = plt.subplots(figsize=(6, 5))
+    fig, ax = plt.subplots(figsize=(7, 5))
     for slug, df in feature_dfs.items():
         abs_r = np.sort(df[col].dropna().abs().values)[::-1]
         ccdf = np.arange(1, len(abs_r) + 1) / len(abs_r)
@@ -184,7 +184,12 @@ def plot_tail_ccdf(
 
     ax.set_xlabel("|Logit return|")
     ax.set_ylabel("P(X > x)")
-    ax.legend()
+    ax.legend(
+        bbox_to_anchor=(1.02, 1),
+        loc="upper left",
+        borderaxespad=0,
+        fontsize="small",
+    )
     ax.set_title("Complementary CDF of |Logit Returns|")
-    fig.tight_layout()
+    fig.tight_layout(rect=[0, 0, 0.78, 1])
     return fig

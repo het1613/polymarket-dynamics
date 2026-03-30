@@ -163,7 +163,7 @@ def plot_acf_overlay(
     nlags: int = 100,
 ) -> plt.Figure:
     """All triad ACF curves on a single axis for direct comparison."""
-    fig, ax = plt.subplots(figsize=(7, 4))
+    fig, ax = plt.subplots(figsize=(8, 4))
     for slug, df in feature_dfs.items():
         acf_df = abs_return_acf(df, col=col, nlags=nlags)
         ax.plot(acf_df["lag"], acf_df["acf"], label=slug, alpha=0.8)
@@ -172,8 +172,8 @@ def plot_acf_overlay(
     ax.set_xlabel("Lag (hours)")
     ax.set_ylabel("ACF of |r|")
     ax.set_title("Cross-Triad ACF Comparison")
-    ax.legend()
-    fig.tight_layout()
+    ax.legend(loc="center left", bbox_to_anchor=(1.02, 0.5), borderaxespad=0)
+    fig.tight_layout(rect=(0, 0, 0.78, 1))
     return fig
 
 
